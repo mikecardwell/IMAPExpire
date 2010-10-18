@@ -1,0 +1,31 @@
+* Author: Mike Cardwell <imapexpire@grepular.com> https://secure.grepular.com/
+
+IMAPExpire is a Perl script that will connect via IMAP and delete messages from
+specified folders over a certain age. It relies on a single third party Perl
+module to be installed from CPAN named IMAP::Client.
+
+Example 1: Delete all messages older than 7 days from all folders directly
+beneath (and including) the INBOX folder.
+
+IMAPExpire --user username --pass password --folders "INBOX" "INBOX/%" --age 7
+
+Run the application with no arguments to see a description of all of the
+options:
+
+Required arguments:
+   --user username         : The username to log in to IMAP with
+   --pass password         : The password to log in to IMAP with
+   --passfile file         : An alternative to --pass. File contains the password
+   --folders f1 f2         : A list of folder search strings to find the folders
+   --age num               : Delete emails over num days old
+
+Optional arguments:
+   --debug num             : Set a debug level from 1-9
+   --ssl or --tls          : If you don't choose one of these it defaults to an
+                           : unencrypted connection
+   --host ip.address       : Defaults to 127.0.0.1
+   --port port             : Defaults to 143 or 993 depending on ssl/tls
+   --authas user           : To authenticate as a user other than the one in
+                           : --user (If this doesn't make sense to you, you
+                           : don't need it)
+   --test                  : Just display what *would* happen. Don't do the deletions
