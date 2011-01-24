@@ -1,4 +1,4 @@
-* Author: Mike Cardwell <imapexpire@grepular.com> https://secure.grepular.com/
+* Author: Mike Cardwell <imapexpire@grepular.com> https://grepular.com/
 
 IMAPExpire is a Perl script that will connect via IMAP and delete messages from
 specified folders over a certain age. It relies on a single third party Perl
